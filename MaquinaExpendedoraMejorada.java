@@ -1,3 +1,4 @@
+
 public class MaquinaExpendedoraMejorada {
     
     // El precio del billete
@@ -14,6 +15,7 @@ public class MaquinaExpendedoraMejorada {
     private int numeroBilletesVendidos;
     private boolean premio;
     private int maximo;
+    private int topePremio;
     /**
      * Crea una maquina expendedora de billetes de tren con el 
      * precio del billete y el origen y destino dados. Se asume que el precio
@@ -28,6 +30,7 @@ public class MaquinaExpendedoraMejorada {
         numeroBilletesVendidos = 0;
         premio = premioDe;
         maximo = maximoDe;
+        topePremio = 0;
     }
 
     /**
@@ -76,8 +79,12 @@ public class MaquinaExpendedoraMejorada {
                     System.out.println("# " + precioBillete + " euros.");
                     System.out.println("##################");
                     if (premio == true) {
-                        System.out.println("tiene un " + precioBillete * 10.00 / 100.00 +"  $ de descuento del coste del ");         
-                        System.out.println("billete para compras en el comercio que elijas");
+                        topePremio = topePremio + 1;
+                        if(topePremio == 3){
+                            System.out.println("tiene un " + precioBillete * 10.00 / 100.00 +"  $ de descuento del coste del ");         
+                            System.out.println("billete para compras en el comercio que elijas");
+                            topePremio = 0;
+                        }
                     }
                     else{ // Simula la impresion de un billete
                         System.out.println();         
